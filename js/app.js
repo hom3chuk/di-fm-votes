@@ -20,7 +20,6 @@ app.factory('votesService', function($http) {
 
 app.filter('imageUrl', function() {
     return function(input) {
-        input = input || '/img/nohomo.jpg';
         var re = /(\{.*\})/;
         return input.replace(re, '');
     };
