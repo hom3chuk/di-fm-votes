@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="votedApp">
+<head>
+    <meta charset="utf-8">
+    <title>Voted</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
+    <style>.row {padding-top:24px;}</style>
+</head>
+<body class="container" ng-controller="di">
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h3>Login with di.fm account</h3>
+    </div>
+    <form class="form-inline" name="loginform">
+        <div class="col-md-6 col-md-offset-3">
+            <input class="form-control" type="text" ng-model="user.username" name="login" required placeholder="username" />
+            <input class="form-control" type="password" ng-model="user.password" name="password" required placeholder="password" />
+            <button class="btn btn-success" ng-click="login(user)">Load favs</button>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 well">
+        <ul class="list-unstyled">
+            <li ng-repeat="vote in votes">
+                <img ng-src="{{ vote.track.images.default | imageUrl }}?width=24">
+                {{ vote.track.track}}
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
