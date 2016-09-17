@@ -14,7 +14,7 @@ app.factory('votesService', function($http) {
         },
         api_key: '',
         page: 1,
-        url: 'http://api.audioaddict.com/v1/di/members/1/track_votes?vote_type=up'
+        url: 'https://api.audioaddict.com/v1/di/members/1/track_votes?vote_type=up'
     }
 });
 
